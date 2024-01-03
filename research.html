@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--
+	TXT by HTML5 UP	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)-->
+<html>
+<head>
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <title> GARX - ARGENTINA </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="sub-header">
+    <nav>
+      <a href="index.html"><img src="images/logo.jpeg" alt=""></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="people.html">PEOPLE</a></li>
+          <li><a href="research.html">RESEARCH</a></li>
+          <li><a href="publications.html">PUBLICATIONS</a></li>
+          <li><a href="codes.html">CODES</a></li>
+          <li><a href="http://rayosx.fcaglp.unlp.edu.ar/index.html" target="_blank">ACADEMIC</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <!--div class="grupal">
+      <center><img src="images/grupal.jpg" alt="GARX"></center>
+    </div-->
+    <h1>Grupo de Astrof&iacute;sica de Rayos X</h1>
+    <p>Instituto Argentino de Radioastronom&iacute;a (IAR-CONICET-CICPBA-UNLP)
+    </p>
+  </section>
+
+
+
+<!--Topics-------->
+  <section class="topics">
+    <h2>RESEARCH TOPICS</h2>
+    <div class="row">
+      <div class=tema-col>
+        <h3>X-ray binaries</h3>
+        <div class="img-col">
+        <div class="layer">
+          <p>high-mass and low-mass X-ray binaries; catalogs; accretion/ejection;
+            variability; spectral-timing; quasi-periodic oscillations;
+            highly-absorbed systems; microquasars</p>
+        </div>
+        <img src="images/binaria.jpeg">
+        </div>
+      </div>
+      <div class=tema-col>
+        <h3>Supernova remnants</h3>
+          <div class="img-col">
+            <div class="layer">
+              <p>thermal emission; chemical abundances; shocks; particle-acceleration;
+                synchrotron emission; radio continuum and gamma-ray emission.</p>
+            </div>
+            <img src="images/remanente.jpeg">
+          </div>
+      </div>
+      <div class=tema-col>
+        <h3>Binary Evolution</h3>
+          <div class="img-col">
+            <div class="layer">
+              <p>formation and evolution of high-mass X-ray binaries; connection
+                to sgHMXBs and SFXTs; neutron-star kicks; binary compact-objects
+                progenitors; gravitational wave coalesces.</p>
+            </div>
+            <img src="images/evolucion.jpeg">
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!--Research-------->
+
+  <!--Cómo agregar un paper?
+  1)copien la estructura:
+  <div class="paper">
+    <div class="titulo">
+      <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.2099B" target="_blank" style="color: #05061D;">
+        <h4> vKompth: A variable Comptonisation model for low-frequency quasi-periodic oscillations in black-hole X-ray binaries</h4>
+      </a>
+      <h5>Candela Bellavita, Federico Garc&iacute;a, Mariano M&eacute;ndez, Konstantinos Karpouzas
+        <span style="font-weight:300;">(<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.2099B" target="_blank" style="color:#05061D;">MNRAS 515, 2099, September 2022</a>)</span>
+      </h5>
+    </div>
+    <div class="paper-info">
+        <img src="papers/Bellavita2022.png">
+        <div class="paper-text">
+          <p>We introduce a dynamic Comptonization model, explaining low-frequency quasi-periodic oscillations in black hole LMXBs. Modeling the accretion disc as a multi-temperature
+            blackbody, we compare it with a spherical blackbody model. Applying our model to BH LMXBs (e.g., MAXI J1438-630, GRS 1915 + 105) shows better fits and compatibility,
+            affirming its ability to reproduce QPO characteristics.</p>
+        </div>
+    </div>
+  </div>
+  2) Modifiquen el link y título del paper en la cuarta línea (encerrada entre <h4></h4>)
+  3) Modifiquen los autores y las referencias en el bloque <h5></h5> OJO: acá también cambien el link hacia su paper.
+    (Para poner tildes en los nombres:
+    por ejemplo la é es &eacute;   entonces Méndez sería M&eacute;ndez   )
+  4) agreguen la imagen a la carpeta "papers" (q el título sea: ApellidoAño)
+  4) apuntar a esa imagen, i.e., en la linea de <img ...> reemplacen por el nombre correcto
+  5) reemplazar el párrafo por el resumen de su texto. Traten de que sea de aprox 50 palabras. Asegurense de no borrar el <p> y </p>
+  6) Si tienen por ejemplo un código y quieren apuntar al github, agregan abajo del párrafo anterior una línea como esta:
+  <p>  The model is openly available on <a href="https://github.com/candebellavita/vkompth" target="_blank" style="color:#F25E3E"> GitHub</a>.</p>
+  LISTO :)
+  -->
+
+  <section class="research">
+    <h2>UNDER CONSTRUCTION</h2>
+    <h3> WHAT'S NEW?</h3>
+
+    <div class="paper">
+      <div class="titulo">
+        <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...669A.149F/abstract" target="_blank" style="color: #05061D;">
+          <h4> A NuSTAR view of SS433. Precessional evolution of the jet-disk system 
+          </h4>
+        </a>
+        <h5>Fogantini, F. A.; Garc&iacute;a, Federico; Combi, J.A.; Chaty, S.; Mart&iacute;, J.; Luque Escamilla, P.L.
+          <span style="font-weight:300;">(<a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...669A.149F/abstract" target="_blank" style="color:#05061D;">MNRAS 513, 4196, July 2022</a>)</span>
+        </h5>
+      </div>
+      <div class="paper-info">
+          <img src="papers/Fogantini_SS433.png">
+          <div class="paper-text">
+            <p>We studied the famous microquasar SS433 using 10 NuSTAR observations that span almost 2 precessional cycles of the system. Using a combination of a thermal leptonic jet and relativistic reflection from an accretion disk, we found that the precessional motion of the system successfully explains the modulation seen in several spectral parameters. </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="titulo">
+        <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv231011553S/abstract" target="_blank" style="color: #05061D;">
+          <h4> NuSTAR and XMM-Newton observations of the binary 4FGL J1405.1-6119. A  Gamma-ray emitting microquasar?
+     </h4>
+        </a>
+        <h5>Saavedra, Enzo A. ; Fogantini, Federico A. ; Escobar, Gast&oacute;n J. ; Romero, Gustavo E. ; Combi, Jorge A.; Marcel, Estefania
+          <span style="font-weight:300;">(<a href="https://ui.adsabs.harvard.edu/abs/2023arXiv231011553S/abstract" target="_blank" style="color:#05061D;"> A&A - In press. </a>)</span>
+       </h5>
+      </div>
+      <div class="paper-info">
+          <img src="papers/Saavedra_4FGL.png">
+          <div class="paper-text">
+            <p>We studied the binary 4FGL J1405.1-6119, a high-mass gamma-ray emitter, with NuSTAR and XMM-Newton. We use a parabolic and slightly relativistic lepto-hadronic jet scenario to explain the spectral energy distribution, suggesting that 4FGL J1405.1-6119 could be a supercritical microquasar similar to SS433.</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="titulo">
+        <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.522.3367S/abstract" target="_blank" style="color: #05061D;">
+          <h4> Relativistic X-ray reflection and photoionized absorption in the neutron star low-mass X-ray binary GX 13+1 </h4>
+        </a>
+        <h5>Saavedra, Enzo A.; Garc&iacute;a, Federico; Fogantini, Federico A.; M&eacute;ndez, Mariano ; Combi, Jorge A.; Luque-Escamilla, Pedro L. ; Mart&iacute;, Josep
+          <span style="font-weight:300;">(<a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.522.3367S/abstract" target="_blank" style="color:#05061D;">MNRAS 522, 3367, July 2023</a>)</span>
+       </h5>
+      </div>
+      <div class="paper-info">
+          <img src="papers/Saavedra_GX.png">
+          <div class="paper-text">
+            <p>We studied the neutron-star binary GX 13+1 with NuSTAR, finding its transition from normal to flaring states. Spectral analysis revealed evidence of relativistic reflection, constraining inner disc radius and magnetic field strength. A hot wind with photo-ionised absorption of Fe and Ni was detected. The study suggests high electron densities in the accretion disk, challenging previous models and impacting our understanding of GX 13+1's physical conditions. </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="titulo">
+        <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.2099B" target="_blank" style="color: #05061D;">
+          <h4> vKompth: A variable Comptonisation model for low-frequency quasi-periodic oscillations in black-hole X-ray binaries</h4>
+        </a>
+        <h5>Candela Bellavita, Federico Garc&iacute;a, Mariano M&eacute;ndez, Konstantinos Karpouzas
+          <span style="font-weight:300;">(<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.515.2099B" target="_blank" style="color:#05061D;">MNRAS 515, 2099, September 2022</a>)</span>
+        </h5>
+      </div>
+      <div class="paper-info">
+          <img src="papers/Bellavita2022.png">
+          <div class="paper-text">
+            <p>We introduce a dynamic Comptonization model, explaining low-frequency quasi-periodic oscillations in black hole LMXBs. Modeling the accretion disc as a multi-temperature
+              blackbody, we compare it with a spherical blackbody model. Applying our model to BH LMXBs (e.g., MAXI J1438-630, GRS 1915 + 105) shows better fits and compatibility,
+              affirming its ability to reproduce QPO characteristics.</p>
+            <p>  The model is openly available on <a href="https://github.com/candebellavita/vkompth" target="_blank" style="color:#F25E3E"> GitHub</a>.</p>
+          </div>
+      </div>
+    </div>
+
+
+<div class="paper">
+  <div class="titulo">
+    <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.4196G/abstract" target="_blank" style="color: #05061D;">
+      <h4> The evolving properties of the corona of GRS 1915+105: a spectral-timing perspective through variable-Comptonization modelling </h4>
+    </a>
+    <h5>Garc&iacute;a, Federico; Karpouzas, Konstantinos; M&eacute;ndez, Mariano, Zhang, Liang; Zhang, Yuexin; Belloni, Tomaso; Altamirano, Diego
+      <span style="font-weight:300;">(<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.513.4196G/abstract" target="_blank" style="color:#05061D;">MNRAS 513, 4196, July 2022</a>)</span>
+    </h5>
+  </div>
+  <div class="paper-info">
+      <img src="papers/Garcia2022.png">
+      <div class="paper-text">
+        <p>We explore the role of inverse Compton processes in shaping X-ray spectra in black hole low-mass X-ray binaries, focusing on GRS 1915+105. Our spectral-timing Comptonization model, applied to 398 observations, reveals consistent trends in corona properties over 15 years. Connecting with 15 GHz radio monitoring, we propose disc-corona interactions influencing the radio jet launch.</p>
+      </div>
+  </div>
+</div>
+
+
+  </section>
+
+
+
+  <!--Footer------>
+  <footer id="footer" class="pie">
+      <div class="row 200%">
+      </div>
+      <div class="row 200%">
+      </div>
+      <!-- Copyright -->
+      <div id="copyright">
+          &nbsp;&nbsp;<a href="http://www.fcaglp.unlp.edu.ar" target="_blank"><img src="images/fcag-new.png" alt="FCAGLP" height="50px"></a> &nbsp;&nbsp;
+          <a href="http://www.iar.unlp.edu.ar" target="_blank"><img src="images/iar-new.png" alt="IAR" height="50px"></a> &nbsp;&nbsp;
+          <a href="http://www.unlp.edu.ar" target="_blank"><img src="images/unlp-new.png" alt="UNLP" height="50px"></a> &nbsp;&nbsp;
+           <a href="http://garra.iar.unlp.edu.ar" target="_blank"><img src="images/garra-new.jpg" alt="FCAGLP" height="50px"></a> &nbsp;&nbsp
+      </div>
+  </footer>
+  <!--JavaScript for Toggle Menu------>
+    <script>
+      var navLinks = document.getElementById("navLinks")
+      function showMenu(){
+        navLinks.style.right = "0";
+      }
+      function hideMenu(){
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+
+  </html>
