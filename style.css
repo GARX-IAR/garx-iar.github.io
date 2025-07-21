@@ -154,6 +154,93 @@ p{
   padding: 10px;
   text-align: center;
 }
+
+/*--Novedades---*/
+.news{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+.news h3{
+  margin: 10px 0 40px;
+  font-size: 35px;
+  font-weight: 700;
+  color: #F25E3E
+}
+.novedad{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(233, 242, 249, 0.6);
+  border-radius: 10px;
+}
+
+.novedad h4{
+  text-align: left;
+  font-weight: 700;
+  font-size: 27px;
+  margin: 10px 0;
+  color: #05061D;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.novedad h5{
+  text-align: left;
+  font-weight: 500;
+  font-size: 23px;
+  margin: 10px 0;
+  color: #05061D;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.novedad:hover{
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.novedad-info {
+  margin: 2px auto;
+  width: 97%;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.novedad-info img {
+  max-width: 30%;
+  flex: 0 0 auto;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.novedad-text {
+  flex: 1 1 calc(70% - 15px);
+  padding-top: 50px;
+}
+
+.novedad-text p {
+  text-align: justify;
+  padding-left: 15px;
+}
+
+@media (max-width: 700px) {
+  .novedad-info img {
+    max-width: 97%;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+  }
+
+  .novedad-text {
+    flex: 1 1 100%;
+    margin-top: 10px;
+    padding-top: 0;
+  }
+}
 /*--Temas------*/
 .topics{
   width: 80%;
@@ -461,8 +548,7 @@ font-weight: 500;
   margin: 10px 0 40px;
   font-size: 35px;
   font-weight: 700;
-  color: #F25E3E;
-  font-weight: 600;
+  color: #F25E3E
 }
 
 .paper{
@@ -559,6 +645,94 @@ font-weight: 500;
   color: #05061D;
   font-size: 23px;
   padding-top: 15px;
+}
+
+
+/*--ACADEMIC---*/
+.academic{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+.academic h3{
+  margin: 10px 0 40px;
+  font-size: 35px;
+  font-weight: 700;
+  color: #F25E3E
+}
+.curso{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(233, 242, 249, 0.6);
+  border-radius: 10px;
+}
+
+.curso h4{
+  text-align: left;
+  font-weight: 700;
+  font-size: 27px;
+  margin: 10px 0;
+  color: #05061D;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.curso h5{
+  text-align: left;
+  font-weight: 500;
+  font-size: 23px;
+  margin: 10px 0;
+  color: #05061D;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.curso:hover{
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.curso-info {
+  margin: 2px auto;
+  width: 97%;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.curso-info img {
+  max-width: 30%;
+  flex: 0 0 auto;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.curso-text {
+  flex: 1 1 calc(70% - 15px);
+  padding-top: 50px;
+}
+
+.curso-text p {
+  text-align: justify;
+  padding-left: 15px;
+}
+
+@media (max-width: 700px) {
+  .curso-info img {
+    max-width: 97%;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+  }
+
+  .curso-text {
+    flex: 1 1 100%;
+    margin-top: 10px;
+    padding-top: 0;
+  }
 }
 /*------------------CODES--------------*/
 
