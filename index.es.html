@@ -4,11 +4,9 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)-->
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
   <title> GARX - ARGENTINA </title>
   <link rel="stylesheet" href="style.css">
-  <!-- Añadido FontAwesome para los iconos del menú y las tesis -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
@@ -19,188 +17,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,600&family=Roboto:wght@500&display=swap" rel="stylesheet">
-
-  <!-- Estilos adicionales para realzar la sección de tesis -->
-  <style>
-    .academic-section-title {
-        text-align: center;
-        margin: 60px 0 40px 0;
-        position: relative;
-    }
-    .academic-section-title h2 {
-        color: #05061D;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 2em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        display: inline-block;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-        border-bottom: 3px solid #f2f2f2;
-    }
-    .academic-section-title p {
-        color: #666;
-        font-size: 1rem;
-        margin-top: 5px;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    /* Tarjetas de Tesis */
-    .thesis-item {
-        background: #ffffff;
-        border-radius: 12px;
-        padding: 0;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 15px rgba(5, 6, 29, 0.05);
-        border: 1px solid #e9ecef;
-        border-left: 6px solid #05061D;
-        overflow: hidden;
-        transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .thesis-item.active {
-        box-shadow: 0 8px 25px rgba(5, 6, 29, 0.1);
-    }
-    
-    /* Cabecera clickeable */
-    .thesis-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 30px;
-        cursor: pointer;
-        background-color: #ffffff;
-        transition: background-color 0.3s ease;
-        user-select: none;
-    }
-    .thesis-header:hover {
-        background-color: #f8f9fa;
-    }
-    .title-group {
-        display: flex;
-        align-items: center;
-        flex: 1;
-        margin-right: 15px;
-    }
-
-    /* Contenedor de Ícono (Logo) */
-    .icon-box {
-        background-color: #eef2f7;
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        flex-shrink: 0;
-        transition: all 0.3s ease;
-    }
-    .thesis-header:hover .icon-box {
-        background-color: #fde9e2; /* Fondo naranja claro al pasar mouse */
-    }
-    .thesis-item.active .icon-box {
-        background-color: #05061D; /* Fondo azul oscuro al estar abierto */
-    }
-    .icon-box i {
-        font-size: 1.4em;
-        color: #05061D;
-        transition: all 0.3s ease;
-    }
-    .thesis-header:hover .icon-box i {
-        color: #F25E3E; /* Ícono naranja al pasar mouse */
-    }
-    .thesis-item.active .icon-box i {
-        color: #ffffff; /* Ícono blanco al estar abierto */
-    }
-
-    .thesis-header h4 {
-        color: #05061D;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 1.3em;
-        margin: 0;
-        line-height: 1.3;
-    }
-    
-    /* Ícono de desplegar */
-    .toggle-icon {
-        font-size: 1.2em;
-        color: #05061D;
-        transition: transform 0.3s ease;
-        opacity: 0.7;
-    }
-    .thesis-item.active .toggle-icon {
-        transform: rotate(180deg);
-        opacity: 1;
-    }
-
-    /* Contenido oculto */
-    .thesis-text {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-        padding: 0 30px;
-    }
-    .thesis-item.active .thesis-text {
-        max-height: 2000px;
-        padding: 0 30px 30px 30px;
-    }
-    .thesis-text p {
-        color: #444;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem;
-        line-height: 1.7;
-        text-align: justify;
-        margin-bottom: 15px;
-        margin-top: 20px;
-    }
-    .thesis-text p:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Sub-temas */
-    .thesis-sub-item {
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        padding: 20px 25px;
-        margin-top: 25px;
-        border: 1px solid #e9ecef;
-        border-left: 4px solid #F25E3E;
-    }
-    .thesis-sub-item h5 {
-        color: #05061D;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 1.1em;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-    }
-    
-    /* Íconos de Sub-temas */
-    .sub-icon-box {
-        background-color: #ffffff;
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 15px;
-        flex-shrink: 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .sub-icon-box i {
-        font-size: 0.9em;
-        color: #F25E3E;
-    }
-  </style>
 </head>
 <body>
-  <section class="sub-header">
+  <section class="header">
     <nav>
-      <a href="index.html"><img src="images/logo.jpeg" alt=""></a>
+      <!--a href="index.html"><img src="images/logo.jpeg" alt=""></a-->
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
@@ -215,192 +36,249 @@
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <h1>Grupo de Astrof&iacute;sica de Rayos X</h1>
-    <p>Instituto Argentino de Radioastronom&iacute;a (IAR-CONICET-CICPBA-UNLP)
+    <div class="homelogo">
+      <center><img src="images/logo.jpeg" alt="GARX"></center>
+    </div>
+    <div class="text-box">
+      <h1>Grupo de Astrof&iacute;sica de Rayos X</h1>
+      <p>Instituto Argentino de Radioastronom&iacute;a (IAR-CONICET-CICPBA-UNLP)
+      </p>
+      <a href="index.es.html" class="lan-btn">ESPA&Ntilde;OL</a>
+      <a href="index.html" class="lan-btn">ENGLISH</a>
+    </div>
+  </section>
+
+<!-- Presentation ------>
+  <section class="presentation">
+    <p>El Grupo de Astrof&iacute;sica de Rayos X (GARX) es un grupo de astrof&iacute;sicos con sede
+      en el Instituto Argentino de Radioastronom&iacute;a (<a href="http://www.iar.unlp.edu.ar" target="_blank" style="color:#05061D;">IAR</a>)
+      y la Universidad Nacional de La Plata (<a href="https://www.fcaglp.unlp.edu.ar/" target="_blank" style="color:#05061D;">UNLP</a>). GARX
+      est&aacute; formado por investigadores, postdoctorandos, estudiantes de doctorado y maestr&iacute;a respaldados por el Consejo
+      Nacional de Investigacines Cient&iacute;ficas y T&eacute;cnicas (<a href="https://www.conicet.gov.ar/" target="_blank" style="color:#05061D;">CONICET</a>),
+      con m&uacute;ltiples colaboradores nacionales e internacionales. Su investigaci&oacute;n se centra principalmente en
+      binarias de Rayos X, objetos compactos acretantes, como estrellas de neutrones y agujeros negros, y sus contrapartes extendidas, remanentes de supernova.
+
     </p>
   </section>
 
-<!--ACADEMIC-->
-
-  <section class="academic">
-    
-    <!-- SECCIÓN: CURSO DE RAYOS X -->
-    <div class="academic-section-title">
-      <h2>Cursos y Escuelas</h2>
+<!----Thesis Offer------->
+  <section class="news">
+    <h3>TEMAS DE TESIS OFRECIDOS</h3>
+    <div class="novedad">
+      <div style="background-color: #eef2f7; padding: 30px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1px solid #dde3ea;">
+        <div style="flex: 1; min-width: 280px;">
+          <h4 style="color: #05061D; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 10px;">Oportunidades de investigaci&oacute;n</h4>
+          <p style="color: #444; font-family: 'Roboto', sans-serif; margin: 0; font-size: 1rem; line-height: 1.6;">Se ofrecen oportunidades de investigaci&oacute;n en astrof&iacute;sica de altas energ&iacute;as para estudiantes de grado y posgrado. Trabaj&aacute; con datos observacionales de misiones de vanguardia como NuSTAR, XMM-Newton, Hubble y m&aacute;s.</p>
+        </div>
+        <a href="academic.es.html" style="background-color: #F25E3E; color: white; padding: 12px 25px; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 600; border-radius: 5px; display: inline-block; white-space: nowrap;">Ver temas disponibles</a>
+      </div>
     </div>
+  </section>
 
-    <div class="curso">
-        <a href="http://rayosx.fcaglp.unlp.edu.ar/index.html" target="_blank" style="color: #05061D;">
-          <h4> Introducci&oacute;n a la Astronom&iacute;a de Rayos-X
-          </h4>
-        </a>
-        <h5>Curso de la Facultad de Ciencias Astron&oacute;micas y Geof&iacute;sicas - Universidad Nacional de La Plata.</h5>
-      <div class="curso-info">
-          <img src="images/logoiarx.png" alt="IARX Logo">
-          <div class="curso-text">
-            <p>Contenidos: Elementos de astronom&iacute;a de rayos-X. Procesos radiativos. Emisores de rayos-X. Instrumentaci&oacute;n. Telescopios de &uacute;ltima generaci&oacute;n. Extracci&oacute;n de datos. Software de reducci&oacute;n y an&aacute;lisis de datos. Calibraci&oacute;n. Archivos de eventos. Creaci&oacute;n de im&aacute;genes. Curva de luz y an&aacute;lisis de variabilidad. Extracci&oacute;n de espectros y ajuste. Calibraci&oacute;n de datos en Chandra. Manipulaci&oacute;n de im&aacute;genes en diferentes rangos de energ&iacute;a. Combinaci&oacute;n de diferentes observaciones en Chandra. Curva de luz, an&aacute;lisis de variabilidad y espectros de rayos-X. Modelos de absorci&oacute;n y emisi&oacute;n.</p>
+<!--Topics-------->
+  <section class="topics">
+    <h2>TEMAS DE INVESTIGACI&Oacute;N</h2>
+    <div class="row">
+      <div class=tema-col>
+        <h3>Binarias de rayos X y objetos compactos</h3>
+        <div class="img-col">
+        <div class="layer">
+          <p>binarias de alta y baja masa; cat&aacute;logos; acreci&oacute;n/eyecci&oacute;n;
+            variabilidad; an&aacute;lisis espectro-temporal; oscilaciones quasi-peri&oacute;dicas;
+            sistemas altamente absorbidos; microcu&aacute;sares; p&uacute;lsares; agujeros negros.</p>
+        </div>
+        <img src="images/binaria.jpeg">
+        </div>
+      </div>
+      <div class=tema-col>
+        <h3>Remanentes de supernova</h3>
+          <div class="img-col">
+            <div class="layer">
+              <p>emisi&oacute;n t&eacute;rmica; abundancias qu&iacutemicas; choques; aceleraci&oacute;n
+                de part&iacute;culas; emisi&oacute;n sincrotr&oacute;n; emisi&oacute;n de radio continuo y de rayos gamma.</p>
+            </div>
+            <img src="images/remanente.jpeg">
           </div>
       </div>
-    </div>
-
-    <!-- SECCIÓN: TEMAS DE TESIS -->
-    <div class="academic-section-title">
-      <h2>Temas de Tesis Ofrecidos</h2>
-      <p>Oportunidades de investigaci&oacute;n para estudiantes de grado y posgrado</p>
-    </div>
-
-    <!-- Tesis 1 -->
-    <div class="thesis-item">
-      <div class="thesis-header" onclick="toggleThesis(this)">
-        <div class="title-group">
-          <div class="icon-box">
-            <i class="fa-solid fa-burst"></i>
-          </div>
-          <h4>1) Fuentes de rayos X ultraluminosas</h4>
-        </div>
-        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="thesis-text">
-        <p>Las fuentes de rayos X ultraluminosas se encuentran entre los objetos más extremos del universo. Su característica principal es que emiten por encima del límite de Eddington, que puede entenderse como el brillo máximo que un objeto puede sostener antes de que la presión de su propia radiación tienda a empujar hacia afuera el material que está intentando atraer. Cuando un sistema supera ese límite, significa que en él están ocurriendo procesos de acreción particularmente intensos y eficientes.</p>
-        <p>Este proyecto se enfocará en la reducción, el análisis y la interpretación física de observaciones simultáneas obtenidas con NuSTAR y XMM-Newton. La o el estudiante trabajará con datos observacionales de alta calidad y desarrollará herramientas para entender cómo se genera esta emisión extrema, qué nos dice sobre la materia que está cayendo sobre el objeto compacto y por qué estos sistemas desafían nuestra comprensión de los límites de la física en ambientes astrofísicos.</p>
-      </div>
-    </div>
-
-    <!-- Tesis 2 -->
-    <div class="thesis-item">
-      <div class="thesis-header" onclick="toggleThesis(this)">
-        <div class="title-group">
-          <div class="icon-box">
-            <i class="fa-solid fa-magnet"></i>
-          </div>
-          <h4>2) Emisión de alta energía en sistemas binarios magnéticos</h4>
-        </div>
-        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="thesis-text">
-        <p>Cuando una estrella interactúa con una enana blanca con un campo magnético muy intenso, el sistema puede emitir energía a lo largo de una gran parte del espectro electromagnético, desde el ultravioleta hasta los rayos X. Estos sistemas son laboratorios naturales para estudiar cómo la materia cae sobre objetos compactos y cómo los campos magnéticos modifican ese proceso.</p>
-        <p>Este proyecto se centrará en el análisis de observaciones obtenidas con NuSTAR y el Hubble Space Telescope. La o el estudiante aprenderá a reducir y analizar datos astronómicos reales, y al mismo tiempo se familiarizará con la física de acreción, es decir, el proceso mediante el cual un objeto compacto captura materia de su entorno, liberando grandes cantidades de energía. Es un proyecto ideal para iniciarse tanto en el trabajo con datos observacionales como en la interpretación física de sistemas compactos.</p>
-      </div>
-    </div>
-
-    <!-- Tesis 3 -->
-    <div class="thesis-item">
-      <div class="thesis-header" onclick="toggleThesis(this)">
-        <div class="title-group">
-          <div class="icon-box">
-            <i class="fa-solid fa-circle-nodes"></i>
-          </div>
-          <h4>3) Binarias ultracompactas de baja masa</h4>
-        </div>
-        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="thesis-text">
-        <p>Las binarias ultracompactas de baja masa son sistemas con períodos orbitales menores a 80 minutos, generalmente formados por una enana blanca orbitando alrededor de una estrella de neutrones. Debido a que los dos objetos están extremadamente cerca entre sí, estos sistemas son especialmente útiles para estudiar la evolución de binarias compactas, la acreción de materia y la emisión de alta energía. Además, son de gran interés porque constituyen fuentes importantes para LISA (Laser Interferometer Space Antenna), una futura misión espacial diseñada para detectar ondas gravitacionales, es decir, pequeñas perturbaciones en el espacio-tiempo producidas por el movimiento de objetos muy masivos y compactos. Dentro de esta línea se proponen dos proyectos:</p>
-        
-        <!-- Sub-tema 3a -->
-        <div class="thesis-sub-item">
-          <h5>
-            <div class="sub-icon-box"><i class="fa-solid fa-bolt"></i></div>
-            3a) Estudio teórico-observacional de la posible presencia de jets
-          </h5>
-          <p>En este proyecto se obtendrán magnitudes infrarrojas a partir de observaciones de Spitzer, que se combinarán con otras mediciones disponibles para construir la distribución espectral de energía del sistema. En términos simples, esto permite estudiar cómo se reparte la energía emitida por la fuente en distintas longitudes de onda. A partir de ese análisis y de su modelado, se investigará la posible presencia de un jet, es decir, una eyección colimada de materia y energía que puede producirse en sistemas en acreción. La o el estudiante trabajará con datos en distintas bandas del espectro y aprenderá a conectar observaciones con modelos físicos.</p>
-        </div>
-
-        <!-- Sub-tema 3b -->
-        <div class="thesis-sub-item">
-          <h5>
-            <div class="sub-icon-box"><i class="fa-solid fa-chart-line"></i></div>
-            3b) Caracterización detallada de la emisión en rayos X
-          </h5>
-          <p>Este proyecto se centrará en la reducción y el análisis de dos observaciones de rayos X con el objetivo de caracterizar en detalle la emisión del sistema. La o el estudiante adquirirá experiencia en análisis espectral y temporal, herramientas fundamentales para estudiar cómo cambia la emisión con la energía y con el tiempo. Esto permitirá investigar la geometría del sistema, las propiedades del material en acreción y los mecanismos responsables de la radiación observada. Es un proyecto especialmente formativo para quienes quieran iniciarse en el análisis de datos de alta energía y en el estudio de objetos compactos.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tesis 4 -->
-    <div class="thesis-item">
-      <div class="thesis-header" onclick="toggleThesis(this)">
-        <div class="title-group">
-          <div class="icon-box">
-            <i class="fa-solid fa-wave-square"></i>
-          </div>
-          <h4>4) Estudios espectro-temporales y oscilaciones cuasi-periódicas en binarias de rayos X</h4>
-        </div>
-        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="thesis-text">
-        <p>Las binarias de rayos X son sistemas donde un agujero negro o estrella de neutrones acreta materia de una estrella compañera, resultando laboratorios ideales para comprender la astrofísica en regímenes de gravedad extrema. A medida que el material es atraído hacia el objeto compacto, se calienta emitiendo rayos X que lejos de ser estables, presentan fluctuaciones complejas en rangos amplios de frecuencia. Analizar estas variaciones en tiempo y energía (análisis espectro-temporal), y en particular las Oscilaciones Cuasi-Periódicas (QPOs) que actúan como un metrónomo del sistema, permite mapear la geometría y la física del flujo de acreción en las regiones más internas del espacio-tiempo.</p>
-        <p>Para esta Tesis de Licenciatura, es posible elegir entre dos enfoques según el perfil del estudiante:</p>
-        
-        <!-- Sub-tema 4a -->
-        <div class="thesis-sub-item">
-          <h5>
-            <div class="sub-icon-box"><i class="fa-solid fa-satellite"></i></div>
-            4a) Enfoque observacional
-          </h5>
-          <p>Procesamiento y análisis de datos reales de misiones satelitales modernas (como NICER, NuSTAR o HXMT). A partir del aprendizaje de técnicas avanzadas de análisis de Fourier, se realizarán análisis detallados de conjuntos de datos de dichas misiones, para comprender los fenómenos físicos que se manifiestan a partir del entramado espectro-temporal.</p>
-        </div>
-
-        <!-- Sub-tema 4b -->
-        <div class="thesis-sub-item">
-          <h5>
-            <div class="sub-icon-box"><i class="fa-solid fa-atom"></i></div>
-            4b) Enfoque Teórico
-          </h5>
-          <p>Modelado computacional orientado a la interpretación física de dichas oscilaciones. Se utilizarán modelos teóricos de transporte radiativo dependiente del tiempo (como Comptonización térmica) para reproducir los espectros y las QPOs, acotando parámetros asociados a la geometría del flujo de acreción.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECCIÓN: ESCUELA ASTRAL-X -->
-    <div class="academic-section-title">
-      <h2>Escuela ASTRAL-X</h2>
-    </div>
-
-    <div class="curso">
-        <a href="https://congresos.unlp.edu.ar/astralx/" target="_blank" style="color: #05061D;">
-          <h4> Miembros del GARX organizan ASTRAL-X: Escuela de Astronom&iacute;a de rayos-X
-          </h4>
-        </a>
-        <h5>Workshop conjunto de IAU I-HOW y COSPAR Capacity Building.</h5>
-      <div class="curso-info">
-          <img src="images/logoastral.png" alt="ASTRAL-X Logo">
-          <div class="curso-text">
-            <p>Escuela avanzada de rayos-X dirigida a Am&eacute;rica Latina, centrada en espectroscop&iacute;a de alta resoluci&oacute;n, an&aacute;lisis espectro-temporales y polarimetr&iacute;a. Programa intensivo de astrof&iacute;sica de rayos-X para estudiantes y j&oacute;venes investigadores, con formaci&oacute;n pr&aacute;ctica en XRISM, NICER, IXPE, NuSTAR y herramientas de machine learning.</p>
-            <h5> DICIEMBRE 1-12, 2025   -   LA PLATA | ARGENTINA </h5>
+      <div class=tema-col>
+        <h3>Evoluci&oacute;n de binarias</h3>
+          <div class="img-col">
+            <div class="layer">
+              <p>Formaci&oacute;n  y evoluci&oacute;n de binarias de rayos X de alta masa; conexi&oacute;n
+                 con sgHMXBs y SFXTs; impulsos de estrellas de neutrones; progenitores de objetos compactos en sistemas binarios;
+                 fusiones que generan ondas gravitacionales </p>
+            </div>
+            <img src="images/evolucion.jpeg">
           </div>
       </div>
     </div>
   </section>
 
-  <!--Footer------>
-  <footer id="footer" class="pie">
-      <div class="row 200%"></div>
-      <div class="row 200%"></div>
-      <!-- Copyright -->
-      <div id="copyright">
-          &nbsp;&nbsp;<a href="http://www.fcaglp.unlp.edu.ar" target="_blank"><img src="images/fcag-new.png" alt="FCAGLP" height="50px"></a> &nbsp;&nbsp;
-          <a href="http://www.iar.unlp.edu.ar" target="_blank"><img src="images/iar-new.png" alt="IAR" height="50px"></a> &nbsp;&nbsp;
-          <a href="http://www.unlp.edu.ar" target="_blank"><img src="images/unlp-new.png" alt="UNLP" height="50px"></a> &nbsp;&nbsp;
-          <a href="http://garra.iar.unlp.edu.ar" target="_blank"><img src="images/garra-new.jpg" alt="FCAGLP" height="50px"></a> &nbsp;&nbsp;
+
+  <!--Indivuales-------->
+    <section class="individuales">
+      <h2>MIEMBROS DEL GRUPO</h2>
+      <div class="row1">
+          <div class="img-col">
+            <a href="https://ui.adsabs.harvard.edu/public-libraries/KnTi536_QXiGRn-htjGw1g" target="_blank"><img src="images/jorge.jpg"></a>
+            <div class="text-container">
+              <h3>JORGE A. COMBI</h3>
+              <p>Investigador Principal</p>
+              <p>(CONICET)</p>
+            </div>
+          </div>
+          <div class="img-col">
+            <a href="https://ui.adsabs.harvard.edu/user/libraries/eEOcMRKUQNGWwjwfaRRYJw" target="_blank"><img src="images/fede.jpg"></a>
+            <div class="text-container">
+              <h3>FEDERICO GARC&Iacute;A</h3>
+              <p>Investigador Independiente</p>
+              <p>(CONICET)</p>
+            </div>
+          </div>
+          <div class="img-col">
+            <a href="https://ui.adsabs.harvard.edu/user/libraries/CW35lKiqR2SD5wF8ZK9-dA" target="_blank"><img src="images/fedefog.jpg"></a>
+            <div class="text-container">
+              <h3>FEDERICO A. FOGANTINI</h3>
+              <p>Becario Postdoctoral</p>
+              <p>(CONICET)</p>
+            </div>
+          </div>
       </div>
-  </footer>
-  
-  <!--JavaScript for Toggle Menu y Acordeón de Tesis------>
+      <div class="row1">
+          <div class="img-col">
+            <img src="images/giulio.jpg">
+            <div class="text-container">
+              <h3>GIULIO C. MANCUSO</h3>
+              <p>Becario Postdoctoral</p>
+              <p>(CONICET)</p>
+            </div>
+          </div>
+<!--          <div class="img-col">
+            <img src="images/fitoo.jpeg">
+            <div class="text-container">
+              <h3>ADOLFO SIMAZ BUNZEL</h3>
+              <p>Becario Doctoral</p>
+              <p>(CONICET)</p>
+            </div>
+          </div>-->
+          <div class="img-col">
+            <a href="https://ui.adsabs.harvard.edu/user/libraries/dwDFBAGLRqm6bT4Jv3YIIg" target="_blank"><img src="images/cande.jpg"></a>
+            <div class="text-container">
+              <h3>CANDELA A. BELLAVITA</h3>
+              <p>Becaria Doctoral</p>
+              <p>(CONICET)</p>
+            </div>
+          </div>
+        <div class="img-col">
+          <a href="https://ui.adsabs.harvard.edu/public-libraries/ZUIocg3oSS-4mBfSLWcsOQ" target="_blank"><img src="images/eze.jpg"></a>
+          <div class="text-container">
+            <h3>EZEQUIEL ZUBIETA</h3>
+            <p>Becario Doctoral</p>
+            <p>(CONICET)</p>
+          </div>
+        </div>
+      </div>
+      <div class="row1">
+          <div class="img-col">
+            <a href="https://ui.adsabs.harvard.edu/public-libraries/74RN3bA8Q8KgFktUaaFT1A" target="_blank"><img src="images/enzo.jpeg"></a>
+            <div class="text-container">
+              <h3>ENZO A. SAAVEDRA</h3>
+              <p>Becario Doctoral</p>
+              <p>(IAC, Spain)</p>
+            </div>
+          </div>
+        <div class="img-col">
+          <img src="images/lautaro.jpeg">
+          <div class="text-container">
+            <h3>LAUTARO WEST OCAMPO</h3>
+            <p>Becario Doctoral</p>
+            <p>(CONICET)</p>
+          </div>
+        </div>
+        <div class="img-col">
+          <a href="https://ui.adsabs.harvard.edu/public-libraries/0-76Rj-hTbS5BNQP7E-DIA" target="_blank"><img src="images/nelson.jpg"></a>
+          <div class="text-container">
+            <h3>NELSON E. CRUZ SANCHEZ</h3>
+            <p>Estudiante de Maestr&iacute;a</p>
+            <p>(UNLP)</p>
+          </div>
+        </div>        
+    </div>    
+  </section>
+
+  <section class="collaborators">
+    <h2>COLABORADORES</h2>
+    <p>GUSTAVO E. ROMERO <span style="font-weight:300;">(IAR, Argentina)</span></p>
+    <p>MARIANO M&Eacute;NDEZ <span style="font-weight:300;">(RUG, Netherlands)</span></p>
+    <p>SYLVAIN CHATY <span style="font-weight:300;">(APC, France)</span></p>
+    <p>DIEGO ALTAMIRANO <span style="font-weight:300;">(SOTON, United Kingdom)</span></p>
+    <p>PEDRO LUQUE ESCAMILLA <span style="font-weight:300;">(UJA, Spain)</span></p>
+    <p>JOSEP MART&Iacute; <span style="font-weight:300;">(UJA, Spain)</span></p>
+    <p>SANTIAGO DEL PALACIO <span style="font-weight:300;">(Chalmers, Sweden)</span></p>
+    <p>FACUNDO ALBACETE COLOMBO <span style="font-weight:300;">(UNRN, Argentina)</span></p>
+
+  </section>
+
+  <!--PUBLICACIONES------>
+
+
+  <section class="publications">
+    <h2>PUBLICACIONES</h2>
+    <p>La lista completa de publicaciones puede encontrarse siguiendo este <a href="https://ui.adsabs.harvard.edu/user/libraries/oMJkrJPJQhu3a3859wwugg" style="color:#F25E3E;" target="_blank" >link al ADS</a>.
+  </section>
+
+  <!--CODIGOS-->
+
+
+  <section class="codes">
+    <h1>NUESTROS C&Oacute;DIGOS Y D&Oacute;NDE ENCONTRARLOS</h1>
+    <p>GARX apoya la filosof&iacute;a de codificaci&oacute;n amigable de c&oacute;digo abierto. La mayor&iacute;a de nuestros c&oacute;digos, que est&aacute;n
+      relacionados con el an&aacute;lisis de datos de rayos X, modelos espectro-temporales y evoluci&oacute;n de binarias, se pueden acceder
+      a trav&eacute;s de portales de control de versiones como <a href="https://github.com/" target="_blank" style="color:#05061D;">GitHub</a>.
+      <a href="codes.html" style="color:#F25E3E;">Aqu&iacute;</a> listamos algunos de los c&oacute;digos desarrollados y mantenidos por
+      miembros de nuestro grupo y sus colaboradores.</p>
+</section>
+
+
+
+<!--CONTACTO-->
+<section class="codes">
+      <h1>C&Oacute;MO CONTACTARNOS</h1>
+      <p>Nuestro Grupo de Astrof&iacute;sica de Rayos X (GARX) desarrolla sus actividades en el
+        Instituto Argentino de Radioastronom&iacute;a (<a href="http://www.iar.unlp.edu.ar" target="_blank" style="color:#05061D;">IAR</a>)
+        y en la Universidad Nacional de La Plata (<a href="https://www.fcaglp.unlp.edu.ar/" target="_blank" style="color:#05061D;">UNLP</a>), Argentina, conectados
+        al Grupo de Astrof&iacute;sica Relativista y Radioastronom&iacute;a(<a href="https://garra.iar.unlp.edu.ar/" target="_blank" style="color:#05061D;">GARRA</a>).</p>
+      <p>   </p>
+      <p><span style="font-size:25px;">No dudes en ponerte en contacto por correo electr&oacute;nico con <span style="color:#F25E3E; font-weight:300;">jcombi</span> o <span style="color:#F25E3E; font-weight:300;">fgarcia</span> @ <span style="color:#F25E3E; font-weight:300;">iar.unlp.edu.ar</span>, o con cualquiera de nuestros <a href="people.html" style="color:#05061D">miembros</a>. </span></p>
+
+
+</section>
+
+
+<!--Footer------>
+<footer id="footer" class="pie">
+    <div class="row 200%">
+    </div>
+    <div class="row 200%">
+    </div>
+    <!-- Copyright -->
+    <div id="copyright">
+        &nbsp;&nbsp;<a href="http://www.fcaglp.unlp.edu.ar" target="_blank"><img src="images/fcag-new.png" alt="FCAGLP" height="50px"></a> &nbsp;&nbsp;
+        <a href="http://www.iar.unlp.edu.ar" target="_blank"><img src="images/iar-new.png" alt="IAR" height="50px"></a> &nbsp;&nbsp;
+        <a href="http://www.unlp.edu.ar" target="_blank"><img src="images/unlp-new.png" alt="UNLP" height="50px"></a> &nbsp;&nbsp;
+         <a href="http://garra.iar.unlp.edu.ar" target="_blank"><img src="images/garra-new.jpg" alt="FCAGLP" height="50px"></a> &nbsp;&nbsp
+    </div>
+</footer>
+<!--JavaScript for Toggle Menu------>
   <script>
-    var navLinks = document.getElementById("navLinks");
+    var navLinks = document.getElementById("navLinks")
     function showMenu(){
       navLinks.style.right = "0";
     }
     function hideMenu(){
       navLinks.style.right = "-200px";
     }
-
-    // Función para desplegar las tesis
-    function toggleThesis(element) {
-      const thesisItem = element.parentElement;
-      thesisItem.classList.toggle('active');
-    }
   </script>
 </body>
+
 </html>
