@@ -49,36 +49,102 @@
     /* Tarjetas de Tesis */
     .thesis-item {
         background: #ffffff;
-        border-radius: 10px;
-        padding: 30px;
-        margin-bottom: 35px;
-        box-shadow: 0 6px 20px rgba(5, 6, 29, 0.07);
+        border-radius: 12px;
+        padding: 0;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(5, 6, 29, 0.05);
+        border: 1px solid #e9ecef;
         border-left: 6px solid #05061D;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
-    .thesis-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 25px rgba(5, 6, 29, 0.12);
+    .thesis-item.active {
+        box-shadow: 0 8px 25px rgba(5, 6, 29, 0.1);
     }
+    
+    /* Cabecera clickeable */
     .thesis-header {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        justify-content: space-between;
+        padding: 20px 30px;
+        cursor: pointer;
+        background-color: #ffffff;
+        transition: background-color 0.3s ease;
+        user-select: none;
     }
-    .thesis-header i {
-        font-size: 1.8em;
-        color: #05061D;
+    .thesis-header:hover {
+        background-color: #f8f9fa;
+    }
+    .title-group {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        margin-right: 15px;
+    }
+
+    /* Contenedor de Ícono (Logo) */
+    .icon-box {
+        background-color: #eef2f7;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-right: 20px;
-        width: 40px;
-        text-align: center;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
     }
+    .thesis-header:hover .icon-box {
+        background-color: #fde9e2; /* Fondo naranja claro al pasar mouse */
+    }
+    .thesis-item.active .icon-box {
+        background-color: #05061D; /* Fondo azul oscuro al estar abierto */
+    }
+    .icon-box i {
+        font-size: 1.4em;
+        color: #05061D;
+        transition: all 0.3s ease;
+    }
+    .thesis-header:hover .icon-box i {
+        color: #F25E3E; /* Ícono naranja al pasar mouse */
+    }
+    .thesis-item.active .icon-box i {
+        color: #ffffff; /* Ícono blanco al estar abierto */
+    }
+
     .thesis-header h4 {
         color: #05061D;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
-        font-size: 1.4em;
+        font-size: 1.3em;
         margin: 0;
         line-height: 1.3;
+    }
+    
+    /* Ícono de desplegar */
+    .toggle-icon {
+        font-size: 1.2em;
+        color: #05061D;
+        transition: transform 0.3s ease;
+        opacity: 0.7;
+    }
+    .thesis-item.active .toggle-icon {
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+
+    /* Contenido oculto */
+    .thesis-text {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        padding: 0 30px;
+    }
+    .thesis-item.active .thesis-text {
+        max-height: 2000px;
+        padding: 0 30px 30px 30px;
     }
     .thesis-text p {
         color: #444;
@@ -87,32 +153,47 @@
         line-height: 1.7;
         text-align: justify;
         margin-bottom: 15px;
+        margin-top: 20px;
     }
     .thesis-text p:last-child {
         margin-bottom: 0;
     }
 
-    /* Sub-temas (3a y 3b) */
+    /* Sub-temas */
     .thesis-sub-item {
         background-color: #f8f9fa;
         border-radius: 8px;
         padding: 20px 25px;
         margin-top: 25px;
-        border-left: 4px solid #aaa;
+        border: 1px solid #e9ecef;
+        border-left: 4px solid #F25E3E;
     }
     .thesis-sub-item h5 {
         color: #05061D;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
         font-size: 1.1em;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
     }
-    .thesis-sub-item h5 i {
+    
+    /* Íconos de Sub-temas */
+    .sub-icon-box {
+        background-color: #ffffff;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .sub-icon-box i {
         font-size: 0.9em;
-        margin-right: 12px;
-        color: #555;
+        color: #F25E3E;
     }
   </style>
 </head>
@@ -143,7 +224,26 @@
 
   <section class="academic">
     
-    <!-- NUEVA SECCIÓN: TEMAS DE TESIS -->
+    <!-- SECCIÓN: CURSO DE RAYOS X -->
+    <div class="academic-section-title">
+      <h2>Cursos y Escuelas</h2>
+    </div>
+
+    <div class="curso">
+        <a href="http://rayosx.fcaglp.unlp.edu.ar/index.html" target="_blank" style="color: #05061D;">
+          <h4> Introducci&oacute;n a la Astronom&iacute;a de Rayos-X
+          </h4>
+        </a>
+        <h5>Curso de la Facultad de Ciencias Astron&oacute;micas y Geof&iacute;sicas - Universidad Nacional de La Plata.</h5>
+      <div class="curso-info">
+          <img src="images/logoiarx.png" alt="IARX Logo">
+          <div class="curso-text">
+            <p>Contenidos: Elementos de astronom&iacute;a de rayos-X. Procesos radiativos. Emisores de rayos-X. Instrumentaci&oacute;n. Telescopios de &uacute;ltima generaci&oacute;n. Extracci&oacute;n de datos. Software de reducci&oacute;n y an&aacute;lisis de datos. Calibraci&oacute;n. Archivos de eventos. Creaci&oacute;n de im&aacute;genes. Curva de luz y an&aacute;lisis de variabilidad. Extracci&oacute;n de espectros y ajuste. Calibraci&oacute;n de datos en Chandra. Manipulaci&oacute;n de im&aacute;genes en diferentes rangos de energ&iacute;a. Combinaci&oacute;n de diferentes observaciones en Chandra. Curva de luz, an&aacute;lisis de variabilidad y espectros de rayos-X. Modelos de absorci&oacute;n y emisi&oacute;n.</p>
+          </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN: TEMAS DE TESIS -->
     <div class="academic-section-title">
       <h2>Temas de Tesis Ofrecidos</h2>
       <p>Oportunidades de investigaci&oacute;n para estudiantes de grado y posgrado</p>
@@ -151,9 +251,14 @@
 
     <!-- Tesis 1 -->
     <div class="thesis-item">
-      <div class="thesis-header">
-        <i class="fa-solid fa-burst"></i>
-        <h4>1) Fuentes de rayos X ultraluminosas</h4>
+      <div class="thesis-header" onclick="toggleThesis(this)">
+        <div class="title-group">
+          <div class="icon-box">
+            <i class="fa-solid fa-burst"></i>
+          </div>
+          <h4>1) Fuentes de rayos X ultraluminosas</h4>
+        </div>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
       </div>
       <div class="thesis-text">
         <p>Las fuentes de rayos X ultraluminosas se encuentran entre los objetos más extremos del universo. Su característica principal es que emiten por encima del límite de Eddington, que puede entenderse como el brillo máximo que un objeto puede sostener antes de que la presión de su propia radiación tienda a empujar hacia afuera el material que está intentando atraer. Cuando un sistema supera ese límite, significa que en él están ocurriendo procesos de acreción particularmente intensos y eficientes.</p>
@@ -163,9 +268,14 @@
 
     <!-- Tesis 2 -->
     <div class="thesis-item">
-      <div class="thesis-header">
-        <i class="fa-solid fa-magnet"></i>
-        <h4>2) Emisión de alta energía en sistemas binarios magnéticos</h4>
+      <div class="thesis-header" onclick="toggleThesis(this)">
+        <div class="title-group">
+          <div class="icon-box">
+            <i class="fa-solid fa-magnet"></i>
+          </div>
+          <h4>2) Emisión de alta energía en sistemas binarios magnéticos</h4>
+        </div>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
       </div>
       <div class="thesis-text">
         <p>Cuando una estrella interactúa con una enana blanca con un campo magnético muy intenso, el sistema puede emitir energía a lo largo de una gran parte del espectro electromagnético, desde el ultravioleta hasta los rayos X. Estos sistemas son laboratorios naturales para estudiar cómo la materia cae sobre objetos compactos y cómo los campos magnéticos modifican ese proceso.</p>
@@ -175,30 +285,76 @@
 
     <!-- Tesis 3 -->
     <div class="thesis-item">
-      <div class="thesis-header">
-        <i class="fa-solid fa-atom"></i>
-        <h4>3) Binarias ultracompactas de baja masa</h4>
+      <div class="thesis-header" onclick="toggleThesis(this)">
+        <div class="title-group">
+          <div class="icon-box">
+            <i class="fa-solid fa-circle-nodes"></i>
+          </div>
+          <h4>3) Binarias ultracompactas de baja masa</h4>
+        </div>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
       </div>
       <div class="thesis-text">
         <p>Las binarias ultracompactas de baja masa son sistemas con períodos orbitales menores a 80 minutos, generalmente formados por una enana blanca orbitando alrededor de una estrella de neutrones. Debido a que los dos objetos están extremadamente cerca entre sí, estos sistemas son especialmente útiles para estudiar la evolución de binarias compactas, la acreción de materia y la emisión de alta energía. Además, son de gran interés porque constituyen fuentes importantes para LISA (Laser Interferometer Space Antenna), una futura misión espacial diseñada para detectar ondas gravitacionales, es decir, pequeñas perturbaciones en el espacio-tiempo producidas por el movimiento de objetos muy masivos y compactos. Dentro de esta línea se proponen dos proyectos:</p>
         
         <!-- Sub-tema 3a -->
         <div class="thesis-sub-item">
-          <h5><i class="fa-solid fa-wave-square"></i> 3a) Estudio teórico-observacional de la posible presencia de jets</h5>
+          <h5>
+            <div class="sub-icon-box"><i class="fa-solid fa-bolt"></i></div>
+            3a) Estudio teórico-observacional de la posible presencia de jets
+          </h5>
           <p>En este proyecto se obtendrán magnitudes infrarrojas a partir de observaciones de Spitzer, que se combinarán con otras mediciones disponibles para construir la distribución espectral de energía del sistema. En términos simples, esto permite estudiar cómo se reparte la energía emitida por la fuente en distintas longitudes de onda. A partir de ese análisis y de su modelado, se investigará la posible presencia de un jet, es decir, una eyección colimada de materia y energía que puede producirse en sistemas en acreción. La o el estudiante trabajará con datos en distintas bandas del espectro y aprenderá a conectar observaciones con modelos físicos.</p>
         </div>
 
         <!-- Sub-tema 3b -->
         <div class="thesis-sub-item">
-          <h5><i class="fa-solid fa-chart-line"></i> 3b) Caracterización detallada de la emisión en rayos X</h5>
+          <h5>
+            <div class="sub-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+            3b) Caracterización detallada de la emisión en rayos X
+          </h5>
           <p>Este proyecto se centrará en la reducción y el análisis de dos observaciones de rayos X con el objetivo de caracterizar en detalle la emisión del sistema. La o el estudiante adquirirá experiencia en análisis espectral y temporal, herramientas fundamentales para estudiar cómo cambia la emisión con la energía y con el tiempo. Esto permitirá investigar la geometría del sistema, las propiedades del material en acreción y los mecanismos responsables de la radiación observada. Es un proyecto especialmente formativo para quienes quieran iniciarse en el análisis de datos de alta energía y en el estudio de objetos compactos.</p>
         </div>
       </div>
     </div>
 
-    <!-- SEPARADOR PARA CURSOS -->
+    <!-- Tesis 4 -->
+    <div class="thesis-item">
+      <div class="thesis-header" onclick="toggleThesis(this)">
+        <div class="title-group">
+          <div class="icon-box">
+            <i class="fa-solid fa-wave-square"></i>
+          </div>
+          <h4>4) Estudios espectro-temporales y oscilaciones cuasi-periódicas en binarias de rayos X</h4>
+        </div>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="thesis-text">
+        <p>Las binarias de rayos X son sistemas donde un agujero negro o estrella de neutrones acreta materia de una estrella compañera, resultando laboratorios ideales para comprender la astrofísica en regímenes de gravedad extrema. A medida que el material es atraído hacia el objeto compacto, se calienta emitiendo rayos X que lejos de ser estables, presentan fluctuaciones complejas en rangos amplios de frecuencia. Analizar estas variaciones en tiempo y energía (análisis espectro-temporal), y en particular las Oscilaciones Cuasi-Periódicas (QPOs) que actúan como un metrónomo del sistema, permite mapear la geometría y la física del flujo de acreción en las regiones más internas del espacio-tiempo.</p>
+        <p>Para esta Tesis de Licenciatura, es posible elegir entre dos enfoques según el perfil del estudiante:</p>
+        
+        <!-- Sub-tema 4a -->
+        <div class="thesis-sub-item">
+          <h5>
+            <div class="sub-icon-box"><i class="fa-solid fa-satellite"></i></div>
+            4a) Enfoque observacional
+          </h5>
+          <p>Procesamiento y análisis de datos reales de misiones satelitales modernas (como NICER, NuSTAR o HXMT). A partir del aprendizaje de técnicas avanzadas de análisis de Fourier, se realizarán análisis detallados de conjuntos de datos de dichas misiones, para comprender los fenómenos físicos que se manifiestan a partir del entramado espectro-temporal.</p>
+        </div>
+
+        <!-- Sub-tema 4b -->
+        <div class="thesis-sub-item">
+          <h5>
+            <div class="sub-icon-box"><i class="fa-solid fa-atom"></i></div>
+            4b) Enfoque Teórico
+          </h5>
+          <p>Modelado computacional orientado a la interpretación física de dichas oscilaciones. Se utilizarán modelos teóricos de transporte radiativo dependiente del tiempo (como Comptonización térmica) para reproducir los espectros y las QPOs, acotando parámetros asociados a la geometría del flujo de acreción.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN: ESCUELA ASTRAL-X -->
     <div class="academic-section-title">
-      <h2>Cursos y Escuelas</h2>
+      <h2>Escuela ASTRAL-X</h2>
     </div>
 
     <div class="curso">
@@ -212,20 +368,6 @@
           <div class="curso-text">
             <p>Escuela avanzada de rayos-X dirigida a Am&eacute;rica Latina, centrada en espectroscop&iacute;a de alta resoluci&oacute;n, an&aacute;lisis espectro-temporales y polarimetr&iacute;a. Programa intensivo de astrof&iacute;sica de rayos-X para estudiantes y j&oacute;venes investigadores, con formaci&oacute;n pr&aacute;ctica en XRISM, NICER, IXPE, NuSTAR y herramientas de machine learning.</p>
             <h5> DICIEMBRE 1-12, 2025   -   LA PLATA | ARGENTINA </h5>
-          </div>
-      </div>
-    </div>
-    
-    <div class="curso">
-        <a href="http://rayosx.fcaglp.unlp.edu.ar/index.html" target="_blank" style="color: #05061D;">
-          <h4> Introducci&oacute;n a la Astronom&iacute;a de Rayos-X
-          </h4>
-        </a>
-        <h5>Curso de la Facultad de Ciencias Astron&oacute;micas y Geof&iacute;sicas - Universidad Nacional de La Plata.</h5>
-      <div class="curso-info">
-          <img src="images/logoiarx.png" alt="IARX Logo">
-          <div class="curso-text">
-            <p>Contenidos: Elementos de astronom&iacute;a de rayos-X. Procesos radiativos. Emisores de rayos-X. Instrumentaci&oacute;n. Telescopios de &uacute;ltima generaci&oacute;n. Extracci&oacute;n de datos. Software de reducci&oacute;n y an&aacute;lisis de datos. Calibraci&oacute;n. Archivos de eventos. Creaci&oacute;n de im&aacute;genes. Curva de luz y an&aacute;lisis de variabilidad. Extracci&oacute;n de espectros y ajuste. Calibraci&oacute;n de datos en Chandra. Manipulaci&oacute;n de im&aacute;genes en diferentes rangos de energ&iacute;a. Combinaci&oacute;n de diferentes observaciones en Chandra. Curva de luz, an&aacute;lisis de variabilidad y espectros de rayos-X. Modelos de absorci&oacute;n y emisi&oacute;n.</p>
           </div>
       </div>
     </div>
@@ -244,7 +386,7 @@
       </div>
   </footer>
   
-  <!--JavaScript for Toggle Menu------>
+  <!--JavaScript for Toggle Menu y Acordeón de Tesis------>
   <script>
     var navLinks = document.getElementById("navLinks");
     function showMenu(){
@@ -252,6 +394,12 @@
     }
     function hideMenu(){
       navLinks.style.right = "-200px";
+    }
+
+    // Función para desplegar las tesis
+    function toggleThesis(element) {
+      const thesisItem = element.parentElement;
+      thesisItem.classList.toggle('active');
     }
   </script>
 </body>
