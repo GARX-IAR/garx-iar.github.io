@@ -5,7 +5,7 @@
   font-family: 'Poppins', sans-serif;
 }
 .header{
-  min-height: 100vh;
+  min-height: 60vh;
   width: 100%;
   background-image: url(images/banner.png);
   background-size: cover;
@@ -62,10 +62,10 @@ nav img{
 .text-box{
   width: 90%;
   color: #05061D;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,50%);
+  transform: translate(-50%,10%);
   text-align: center;
 }
 .text-box h1{
@@ -368,7 +368,7 @@ h3{
 
 /*---------------PEOPLE--------------*/
 .sub-header{
-  height: 50vh;
+  height: 40vh;
   widht:100%;
   background-image: url(images/banner.png);
   background-position: center;
